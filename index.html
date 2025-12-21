@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HabitFlow — трекер привычек</title>
+    <!-- Подключаем Bulma -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <!-- Подключаем иконки -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Дополнительные стили */
+        .hero-gradient {
+            background: linear-gradient(135deg, #00d1b2 0%, #3273dc 100%);
+        }
+        .custom-padding {
+            padding: 4rem 1.5rem;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            transition: 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar is-fixed-top has-shadow">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="#">
+                    <span class="has-text-weight-bold is-size-4">
+                        <span class="has-text-primary">Habit</span>Flow
+                    </span>
+                </a>
+                
+                <!-- Кнопка для мобильных -->
+                <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+            
+            <div class="navbar-menu" id="navMenu">
+                <div class="navbar-end">
+                    <a class="navbar-item" href="#features">Возможности</a>
+                    <a class="navbar-item" href="#how">Как работает</a>
+                    <a class="navbar-item" href="#pricing">Тарифы</a>
+                    <a class="navbar-item" href="#faq">FAQ</a>
+                    <a class="navbar-item button is-primary" href="#download">
+                        <strong>Скачать</strong>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Герой-секция -->
+    <section class="hero hero-gradient is-fullheight-with-navbar">
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns is-vcentered">
+                    <div class="column is-6">
+                        <h1 class="title is-1 has-text-white">
+                            Создавай лучшие привычки
+                        </h1>
+                        <p class="subtitle is-4 has-text-light">
+                            HabitFlow помогает формировать полезные привычки через простой и красивый интерфейс.
+                        </p>
+                        <div class="buttons">
+                            <a class="button is-light is-large">
+                                <span class="icon">
+                                    <i class="fab fa-apple"></i>
+                                </span>
+                                <span>App Store</span>
+                            </a>
+                            <a class="button is-dark is-large">
+                                <span class="icon">
+                                    <i class="fab fa-google-play"></i>
+                                </span>
+                                <span>Google Play</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="column is-6 has-text-centered">
+                        <img src="planning-image.jpg"
+                             alt="Иллюстрация: планирование привычек" 
+                             style="border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); max-width: 100%; height: auto;">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Особенности -->
+    <section class="section custom-padding" id="features">
+        <div class="container">
+            <h2 class="title is-2 has-text-centered mb-6">Что делает HabitFlow особенным?</h2>
+            
+            <div class="columns is-multiline">
+                <!-- Карточка 1 -->
+                <div class="column is-4">
+                    <div class="box card-hover p-5">
+                        <div class="has-text-centered mb-4">
+                            <span class="icon is-large has-text-primary">
+                                <i class="fas fa-bell fa-3x"></i>
+                            </span>
+                        </div>
+                        <h3 class="title is-4 has-text-centered">Умные напоминания</h3>
+                        <p>Приложение анализирует вашу активность и отправляет напоминания в лучшее время.</p>
+                    </div>
+                </div>
+                
+                <!-- Карточка 2 -->
+                <div class="column is-4">
+                    <div class="box card-hover p-5">
+                        <div class="has-text-centered mb-4">
+                            <span class="icon is-large has-text-primary">
+                                <i class="fas fa-chart-pie fa-3x"></i>
+                            </span>
+                        </div>
+                        <h3 class="title is-4 has-text-centered">Наглядная статистика</h3>
+                        <p>Красивые графики показывают ваш прогресс за недели, месяцы и годы.</p>
+                    </div>
+                </div>
+                
+                <!-- Карточка 3 -->
+                <div class="column is-4">
+                    <div class="box card-hover p-5">
+                        <div class="has-text-centered mb-4">
+                            <span class="icon is-large has-text-primary">
+                                <i class="fas fa-trophy fa-3x"></i>
+                            </span>
+                        </div>
+                        <h3 class="title is-4 has-text-centered">Мотивация</h3>
+                        <p>Достижения, награды и челленджи поддерживают вашу мотивацию.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Как работает -->
+    <section class="section has-background-light" id="how">
+        <div class="container">
+            <h2 class="title is-2 has-text-centered mb-6">Как это работает?</h2>
+            
+            <div class="columns is-vcentered">
+                <div class="column has-text-centered">
+                    <div class="mb-4">
+                        <span class="tag is-primary is-large is-rounded">1</span>
+                    </div>
+                    <h3 class="title is-4">Выберите привычку</h3>
+                    <p>Из сотен готовых или создайте свою</p>
+                </div>
+                
+                <div class="column has-text-centered">
+                    <div class="mb-4">
+                        <span class="tag is-primary is-large is-rounded">2</span>
+                    </div>
+                    <h3 class="title is-4">Отслеживайте</h3>
+                    <p>Отмечайте выполнение каждый день</p>
+                </div>
+                
+                <div class="column has-text-centered">
+                    <div class="mb-4">
+                        <span class="tag is-primary is-large is-rounded">3</span>
+                    </div>
+                    <h3 class="title is-4">Анализируйте</h3>
+                    <p>Смотрите статистику и улучшайтесь</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Тарифы -->
+    <section class="section custom-padding" id="pricing">
+        <div class="container">
+            <h2 class="title is-2 has-text-centered mb-6">Выберите подписку</h2>
+            
+            <div class="columns is-centered">
+                <!-- Бесплатный тариф -->
+                <div class="column is-5">
+                    <div class="box p-5">
+                        <h3 class="title is-3">Бесплатно</h3>
+                        <p class="title is-1 has-text-primary">0₽</p>
+                        <p class="subtitle">навсегда</p>
+                        
+                        <div class="content">
+                            <ul>
+                                <li>✓ До 5 привычек</li>
+                                <li>✓ Базовые напоминания</li>
+                                <li>✓ Статистика за 7 дней</li>
+                                <li>✗ Расширенная аналитика</li>
+                            </ul>
+                        </div>
+                        
+                        <a class="button is-primary is-outlined is-fullwidth is-medium">
+                            Начать бесплатно
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Премиум тариф -->
+                <div class="column is-5">
+                    <div class="box p-5 has-shadow">
+                        <div class="tag is-danger is-medium mb-3">Популярный</div>
+                        <h3 class="title is-3">Премиум</h3>
+                        <p class="title is-1 has-text-primary">299₽</p>
+                        <p class="subtitle">в месяц</p>
+                        
+                        <div class="content">
+                            <ul>
+                                <li>✓ Неограниченное количество привычек</li>
+                                <li>✓ Умные напоминания</li>
+                                <li>✓ Подробная аналитика</li>
+                                <li>✓ Поддержка 24/7</li>
+                            </ul>
+                        </div>
+                        
+                        <a class="button is-primary is-fullwidth is-medium">
+                            Попробовать 14 дней бесплатно
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer has-background-dark has-text-light">
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <h3 class="title is-4 has-text-light">HabitFlow</h3>
+                    <p>Формируем привычки, меняем жизнь</p>
+                </div>
+                
+                <div class="column">
+                    <h4 class="title is-6 has-text-light">Контакты</h4>
+                    <p>support@habitflow.ru</p>
+                    <p>+7 (999) 123-45-67</p>
+                </div>
+                
+                <div class="column">
+                    <h4 class="title is-6 has-text-light">Соцсети</h4>
+                    <div>
+                        <a class="has-text-light mr-3">
+                            <i class="fab fa-telegram fa-lg"></i> Telegram
+                        </a><br>
+                        <a class="has-text-light mr-3">
+                            <i class="fab fa-vk fa-lg"></i> ВКонтакте
+                        </a><br>
+                        <a class="has-text-light">
+                            <i class="fab fa-youtube fa-lg"></i> YouTube
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="has-text-centered mt-6">
+                <p>© 2024 HabitFlow. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript для меню -->
+    <script>
+        // Открытие/закрытие мобильного меню
+        document.addEventListener('DOMContentLoaded', () => {
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+            
+            if ($navbarBurgers.length > 0) {
+                $navbarBurgers.forEach(el => {
+                    el.addEventListener('click', () => {
+                        const target = el.dataset.target;
+                        const $target = document.getElementById(target);
+                        
+                        el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
