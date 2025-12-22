@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты и отзывы | HabitFlow</title>
+    <!-- Подключаем Bulma -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <!-- Подключаем иконки -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Дополнительные стили (те же что и в index.html) */
+        .hero-gradient {
+            background: linear-gradient(135deg, #00d1b2 0%, #3273dc 100%);
+        }
+        .custom-padding {
+            padding: 4rem 1.5rem;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            transition: 0.3s;
+        }
+        .contact-map {
+            height: 300px;
+            background: #f5f5f5;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar is-fixed-top has-shadow">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="index.html">
+                    <span class="has-text-weight-bold is-size-4">
+                        <span class="has-text-primary">Habit</span>Flow
+                    </span>
+                </a>
+                
+                <!-- Кнопка для мобильных -->
+                <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+            
+            <div class="navbar-menu" id="navMenu">
+                <div class="navbar-end">
+                    <a class="navbar-item" href="index.html">Главная</a>
+                    <a class="navbar-item" href="contacts.html">Контакты/Отзывы</a>
+                    <a class="navbar-item" href="faq.html">FAQ</a>
+                    <a class="navbar-item" href="index.html#pricing">Тарифы</a>
+                    <a class="navbar-item button is-primary" href="index.html#download">
+                        <strong>Скачать</strong>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Герой-секция -->
+    <section class="hero hero-gradient is-medium">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title is-1 has-text-white">
+                    Свяжитесь с нами
+                </h1>
+                <p class="subtitle is-4 has-text-light">
+                    Мы всегда рады вашим отзывам и вопросам
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Основной контент -->
+    <section class="section custom-padding">
+        <div class="container">
+            <h2 class="title is-2 has-text-centered mb-6">Оставьте отзыв</h2>
+            
+            <div class="columns">
+                <!-- Форма -->
+                <div class="column is-6">
+                    <form id="feedbackForm" class="box">
+                        <div class="field">
+                            <label class="label">Имя</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="Ваше имя" required>
+                            </div>
+                        </div>
+                        
+                        <div class="field">
+                            <label class="label">Email</label>
+                            <div class="control">
+                                <input class="input" type="email" placeholder="example@email.com" required>
+                            </div>
+                        </div>
+                        
+                        <div class="field">
+                            <label class="label">Тема</label>
+                            <div class="control">
+                                <div class="select is-fullwidth">
+                                    <select required>
+                                        <option value="" disabled selected>Выберите тему</option>
+                                        <option>Предложение</option>
+                                        <option>Жалоба</option>
+                                        <option>Вопрос</option>
+                                        <option>Благодарность</option>
+                                        <option>Техническая поддержка</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="field">
+                            <label class="label">Сообщение</label>
+                            <div class="control">
+                                <textarea class="textarea" placeholder="Ваше сообщение..." rows="5" required></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="field">
+                            <div class="control">
+                                <label class="checkbox">
+                                    <input type="checkbox" required>
+                                    Соглашаюсь на обработку персональных данных
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="field">
+                            <div class="control">
+                                <button class="button is-primary is-fullwidth" type="submit">
+                                    Отправить отзыв
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Контактная информация -->
+                <div class="column is-6">
+                    <div class="content">
+                        <h3 class="title is-4">Контактная информация</h3>
+                        <div class="box">
+                            <p class="mb-3">
+                                <span class="icon has-text-primary">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </span>
+                                <strong>Адрес:</strong> Москва, ул. Примерная, 123
+                            </p>
+                            <p class="mb-3">
+                                <span class="icon has-text-primary">
+                                    <i class="fas fa-phone"></i>
+                                </span>
+                                <strong>Телефон:</strong> +7 (999) 123-45-67
+                            </p>
+                            <p class="mb-3">
+                                <span class="icon has-text-primary">
+                                    <i class="fas fa-envelope"></i>
+                                </span>
+                                <strong>Email:</strong> support@habitflow.ru
+                            </p>
+                            <p class="mb-3">
+                                <span class="icon has-text-primary">
+                                    <i class="fas fa-clock"></i>
+                                </span>
+                                <strong>Время работы:</strong> Пн-Пт с 9:00 до 18:00
+                            </p>
+                        </div>
+                        
+                        <!-- Социальные сети -->
+                        <h4 class="title is-5 mt-5">Мы в соцсетях</h4>
+                        <div class="buttons">
+                            <a class="button is-info">
+                                <span class="icon">
+                                    <i class="fab fa-telegram"></i>
+                                </span>
+                                <span>Telegram</span>
+                            </a>
+                            <a class="button is-link">
+                                <span class="icon">
+                                    <i class="fab fa-vk"></i>
+                                </span>
+                                <span>ВКонтакте</span>
+                            </a>
+                            <a class="button is-danger">
+                                <span class="icon">
+                                    <i class="fab fa-youtube"></i>
+                                </span>
+                                <span>YouTube</span>
+                            </a>
+                        </div>
+                        
+                        <!-- Карта (заглушка) -->
+                        <div class="contact-map mt-5">
+                            <div class="has-text-centered">
+                                <span class="icon is-large has-text-grey">
+                                    <i class="fas fa-map fa-3x"></i>
+                                </span>
+                                <p class="mt-3">Здесь будет карта</p>
+                                <p class="is-size-7">Можно добавить через iframe от Яндекс.Карт или Google Maps</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer has-background-dark has-text-light">
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <h3 class="title is-4 has-text-light">HabitFlow</h3>
+                    <p>Формируем привычки, меняем жизнь</p>
+                </div>
+                
+                <div class="column">
+                    <h4 class="title is-6 has-text-light">Контакты</h4>
+                    <p>support@habitflow.ru</p>
+                    <p>+7 (999) 123-45-67</p>
+                </div>
+                
+                <div class="column">
+                    <h4 class="title is-6 has-text-light">Быстрые ссылки</h4>
+                    <p><a href="index.html" class="has-text-light">Главная</a></p>
+                    <p><a href="contacts.html" class="has-text-light">Контакты</a></p>
+                    <p><a href="faq.html" class="has-text-light">FAQ</a></p>
+                </div>
+                
+                <div class="column">
+                    <h4 class="title is-6 has-text-light">Соцсети</h4>
+                    <div>
+                        <a class="has-text-light mr-3">
+                            <i class="fab fa-telegram fa-lg"></i> Telegram
+                        </a><br>
+                        <a class="has-text-light mr-3">
+                            <i class="fab fa-vk fa-lg"></i> ВКонтакте
+                        </a><br>
+                        <a class="has-text-light">
+                            <i class="fab fa-youtube fa-lg"></i> YouTube
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="has-text-centered mt-6">
+                <p>© 2025 HabitFlow. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript для меню и формы -->
+    <script>
+        // Открытие/закрытие мобильного меню
+        document.addEventListener('DOMContentLoaded', () => {
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+            
+            if ($navbarBurgers.length > 0) {
+                $navbarBurgers.forEach(el => {
+                    el.addEventListener('click', () => {
+                        const target = el.dataset.target;
+                        const $target = document.getElementById(target);
+                        
+                        el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+                    });
+                });
+            }
+            
+            // Обработка формы
+            const feedbackForm = document.getElementById('feedbackForm');
+            if (feedbackForm) {
+                feedbackForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    alert('Спасибо за ваш отзыв! Мы свяжемся с вами в ближайшее время.');
+                    feedbackForm.reset();
+                });
+            }
+        });
+    </script>
+</body>
+</html>
