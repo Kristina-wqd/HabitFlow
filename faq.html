@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Часто задаваемые вопросы | HabitFlow</title>
+    <!-- Подключаем Bulma -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <!-- Подключаем иконки -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Дополнительные стили (те же что и в index.html) */
+        .hero-gradient {
+            background: linear-gradient(135deg, #00d1b2 0%, #3273dc 100%);
+        }
+        .custom-padding {
+            padding: 4rem 1.5rem;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            transition: 0.3s;
+        }
+        .faq-item {
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .faq-question {
+            background-color: #f5f5f5;
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-question:hover {
+            background-color: #e8e8e8;
+        }
+        .faq-answer {
+            padding: 1.5rem;
+            background-color: white;
+            border-top: 1px solid #f0f0f0;
+            display: none;
+        }
+        .faq-answer.active {
+            display: block;
+        }
+        .faq-icon {
+            transition: transform 0.3s;
+        }
+        .faq-icon.rotated {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar is-fixed-top has-shadow">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="index.html">
+                    <span class="has-text-weight-bold is-size-4">
+                        <span class="has-text-primary">Habit</span>Flow
+                    </span>
+                </a>
+                
+                <!-- Кнопка для мобильных -->
+                <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+            
+            <div class="navbar-menu" id="navMenu">
+                <div class="navbar-end">
+                    <a class="navbar-item" href="index.html">Главная</a>
+                    <a class="navbar-item" href="contacts.html">Контакты/Отзывы</a>
+                    <a class="navbar-item" href="faq.html">FAQ</a>
+                    <a class="navbar-item" href="index.html#pricing">Тарифы</a>
+                    <a class="navbar-item button is-primary" href="index.html#download">
+                        <strong>Скачать</strong>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Герой-секция -->
+    <section class="hero hero-gradient is-medium">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title is-1 has-text-white">
+                    Часто задаваемые вопросы
+                </h1>
+                <p class="subtitle is-4 has-text-light">
+                    Нашли ответы на популярные вопросы о HabitFlow
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section custom-padding">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <!-- FAQ Accordion -->
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(1)">
+                            <h3 class="title is-5 mb-0">Как начать пользоваться HabitFlow?</h3>
+                            <span class="icon faq-icon" id="icon1">
+                                <i class="fas fa-chevron-down"></i>
+                            </span>
+                        </div>
+                        <div class="faq-answer" id="answer1">
+                            <p>Зарегистрируйтесь в приложении, подтвердите email и начните пользоваться бесплатным тарифом. Все функции доступны сразу после регистрации. Вы можете добавить до 5 привычек бесплатно.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(2)">
+                            <h3 class="title is-5 mb-0">Есть ли мобильное приложение?</h3>
+                            <span class="icon faq-icon" id="icon2">
+                                <i class="fas fa-chevron-down"></i>
+                            </span>
+                        </div>
+                        <div class="faq-answer" id="answer2">
+                            <p>Да, наше приложение доступно в App Store и Google Play. Все функции синхронизируются между веб-версией и приложением. Ваш прогресс сохраняется в облаке.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(3)">
+                            <h3 class="title is-5 mb-0">Можно ли отменить подписку?</h3>
+                            <span class="icon faq-icon" id="icon3">
+                                <i class="fas fa-chevron-down"></i>
+                            </span>
+                        </div>
+                        <div class="faq-answer" id="answer3">
+                            <p>Да, вы можете отменить подписку в любой момент в настройках вашего аккаунта. После отмены у вас останется доступ к премиум-функциям до конца оплаченного периода.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(4)">
+                            <h3 class="title is-5 mb-0">Как работает синхронизация между устройствами?</h3>
+                            <span class="icon faq-icon" id="icon4">
+                                <i class="fas fa-chevron-down"></i>
+                            </span>
+                        </div>
+                        <div class="faq-answer" id="answer4">
+                            <p>HabitFlow использует облачную синхронизацию. Все ваши привычки, прогресс и настройки автоматически синхронизируются между всеми устройствами, где вы вошли в свой аккаунт.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(5)">
+                            <h3 class="title is-5 mb-0">Есть ли возможность экспорта данных?</h3>
+                            <span class="icon faq-icon" id="icon5">
+                                <i class="fas fa-chevron-down"></i>
+                            </span>
+                        </div>
+                        <div class="faq-answer" id="answer5">
+                            <p>Да, в настройках профиля вы можете экспортировать все свои данные в форматах CSV и PDF. Эта функция доступна на всех тарифах.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(6)">
+                            <h3 class="title is-5 mb-0">Как настроить умные напоминания?</h3>
+                            <span class="icon faq-icon" id="icon6">
+                                <i class="fas fa-chevron-down"></i>
+                            </span>
+                        </div>
+                        <div class="faq-answer" id="answer6">
+                            <p>При создании привычки выберите опцию "Умные напоминания". Приложение проанализирует вашу активность и будет отправлять уведомления в оптимальное для вас время.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Дополнительная помощь -->
+                    <div class="box has-background-primary-light mt-6">
+                        <div class="content has-text-centered">
+                            <h3 class="title is-4">Не нашли ответ на свой вопрос?</h3>
+                            <p>Свяжитесь с нашей службой поддержки, мы с радостью поможем!</p>
+                            <a href="contacts.html" class="button is-primary mt-3">
+                                <span class="icon">
+                                    <i class="fas fa-envelope"></i>
+                                </span>
+                                <span>Написать в поддержку</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer has-background-dark has-text-light">
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <h3 class="title is-4 has-text-light">HabitFlow</h3>
+                    <p>Формируем привычки, меняем жизнь</p>
+                </div>
+                
+                <div class="column">
+                    <h4 class="title is-6 has-text-light">Контакты</h4>
+                    <p>support@habitflow.ru</p>
+                    <p>+7 (999) 123-45-67</p>
+                </div>
+                
+                <div class="column">
+                    <h4 class="title is-6 has-text-light">Быстрые ссылки</h4>
+                    <p><a href="index.html" class="has-text-light">Главная</a></p>
+                    <p><a href="contacts.html" class="has-text-light">Контакты</a></p>
+                    <p><a href="faq.html" class="has-text-light">FAQ</a></p>
+                </div>
+                
+                <div class="column">
+                    <h4 class="title is-6 has-text-light">Соцсети</h4>
+                    <div>
+                        <a class="has-text-light mr-3">
+                            <i class="fab fa-telegram fa-lg"></i> Telegram
+                        </a><br>
+                        <a class="has-text-light mr-3">
+                            <i class="fab fa-vk fa-lg"></i> ВКонтакте
+                        </a><br>
+                        <a class="has-text-light">
+                            <i class="fab fa-youtube fa-lg"></i> YouTube
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="has-text-centered mt-6">
+                <p>© 2025 HabitFlow. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript для меню и аккордеона -->
+    <script>
+        // Открытие/закрытие мобильного меню
+        document.addEventListener('DOMContentLoaded', () => {
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+            
+            if ($navbarBurgers.length > 0) {
+                $navbarBurgers.forEach(el => {
+                    el.addEventListener('click', () => {
+                        const target = el.dataset.target;
+                        const $target = document.getElementById(target);
+                        
+                        el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+                    });
+                });
+            }
+            
+            // Открываем первый FAQ по умолчанию
+            toggleFAQ(1);
+        });
+        
+        // Функция для переключения FAQ
+        function toggleFAQ(number) {
+            const answer = document.getElementById(`answer${number}`);
+            const icon = document.getElementById(`icon${number}`);
+            
+            // Закрываем все другие FAQ
+            for (let i = 1; i <= 6; i++) {
+                if (i !== number) {
+                    const otherAnswer = document.getElementById(`answer${i}`);
+                    const otherIcon = document.getElementById(`icon${i}`);
+                    if (otherAnswer) {
+                        otherAnswer.classList.remove('active');
+                    }
+                    if (otherIcon) {
+                        otherIcon.classList.remove('rotated');
+                    }
+                }
+            }
+            
+            // Переключаем текущий FAQ
+            if (answer) {
+                answer.classList.toggle('active');
+            }
+            if (icon) {
+                icon.classList.toggle('rotated');
+            }
+        }
+    </script>
+</body>
+</html>
