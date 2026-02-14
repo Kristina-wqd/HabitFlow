@@ -86,61 +86,67 @@
             <div class="columns">
                 <!-- Форма -->
                 <div class="column is-6">
-                    <form id="feedbackForm" class="box">
-                        <div class="field">
-                            <label class="label">Имя</label>
-                            <div class="control">
-                                <input class="input" type="text" placeholder="Ваше имя" required>
-                            </div>
-                        </div>
-                        
-                        <div class="field">
-                            <label class="label">Email</label>
-                            <div class="control">
-                                <input class="input" type="email" placeholder="example@email.com" required>
-                            </div>
-                        </div>
-                        
-                        <div class="field">
-                            <label class="label">Тема</label>
-                            <div class="control">
-                                <div class="select is-fullwidth">
-                                    <select required>
-                                        <option value="" disabled selected>Выберите тему</option>
-                                        <option>Предложение</option>
-                                        <option>Жалоба</option>
-                                        <option>Вопрос</option>
-                                        <option>Благодарность</option>
-                                        <option>Техническая поддержка</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="field">
-                            <label class="label">Сообщение</label>
-                            <div class="control">
-                                <textarea class="textarea" placeholder="Ваше сообщение..." rows="5" required></textarea>
-                            </div>
-                        </div>
-                        
-                        <div class="field">
-                            <div class="control">
-                                <label class="checkbox">
-                                    <input type="checkbox" required>
-                                    Соглашаюсь на обработку персональных данных
-                                </label>
-                            </div>
-                        </div>
-                        
-                        <div class="field">
-                            <div class="control">
-                                <button class="button is-primary is-fullwidth" type="submit">
-                                    Отправить отзыв
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                   <form id="feedbackForm" class="box">
+    <!-- Поле Имя -->
+    <div class="field">
+        <label class="label">Имя</label>
+        <div class="control">
+            <input class="input" type="text" id="name" placeholder="Ваше имя" required>
+        </div>
+    </div>
+    
+    <!-- Поле Email -->
+    <div class="field">
+        <label class="label">Email</label>
+        <div class="control">
+            <input class="input" type="email" id="email" placeholder="example@email.com" required>
+        </div>
+    </div>
+    
+    <!-- Поле Тема -->
+    <div class="field">
+        <label class="label">Тема</label>
+        <div class="control">
+            <div class="select is-fullwidth">
+                <select id="subject" required>
+                    <option value="" disabled selected>Выберите тему</option>
+                    <option value="Предложение">Предложение</option>
+                    <option value="Жалоба">Жалоба</option>
+                    <option value="Вопрос">Вопрос</option>
+                    <option value="Благодарность">Благодарность</option>
+                    <option value="Поддержка">Техническая поддержка</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Поле Сообщение -->
+    <div class="field">
+        <label class="label">Сообщение</label>
+        <div class="control">
+            <textarea class="textarea" id="message" placeholder="Ваше сообщение..." rows="5" required></textarea>
+        </div>
+    </div>
+    
+    <!-- Согласие -->
+    <div class="field">
+        <div class="control">
+            <label class="checkbox">
+                <input type="checkbox" id="agreement" required>
+                Соглашаюсь на обработку персональных данных
+            </label>
+        </div>
+    </div>
+    
+    <!-- Кнопка -->
+    <div class="field">
+        <div class="control">
+            <button class="button is-primary is-fullwidth" type="submit">
+                Отправить отзыв
+            </button>
+        </div>
+    </div>
+</form>
                 </div>
                 
                 <!-- Контактная информация -->
@@ -274,87 +280,6 @@
                     });
                 });
             }
-            
-            // Обработка формы
-            <form id="feedbackForm" class="box">
-    <!-- Поле Имя -->
-    <div class="field">
-        <label class="label">Имя <span class="has-text-danger">*</span></label>
-        <div class="control">
-            <input class="input" 
-                   type="text" 
-                   id="name"                 <!-- ДОБАВЛЕНО -->
-                   placeholder="Ваше имя" 
-                   required>
-        </div>
-        <p class="help" id="nameHelp">Введите ваше имя и фамилию</p>  <!-- ДОБАВЛЕНО -->
-    </div>
-    
-    <!-- Поле Email -->
-    <div class="field">
-        <label class="label">Email <span class="has-text-danger">*</span></label>
-        <div class="control">
-            <input class="input" 
-                   type="email" 
-                   id="email"                <!-- ДОБАВЛЕНО -->
-                   placeholder="example@email.com" 
-                   required>
-        </div>
-        <p class="help" id="emailHelp">Введите корректный email</p>  <!-- ДОБАВЛЕНО -->
-    </div>
-    
-    <!-- Поле Тема -->
-    <div class="field">
-        <label class="label">Тема <span class="has-text-danger">*</span></label>
-        <div class="control">
-            <div class="select is-fullwidth">
-                <select id="subject" required>    <!-- ДОБАВЛЕНО id -->
-                    <option value="" disabled selected>Выберите тему</option>
-                    <option value="Предложение">Предложение</option>
-                    <option value="Жалоба">Жалоба</option>
-                    <option value="Вопрос">Вопрос</option>
-                    <option value="Благодарность">Благодарность</option>
-                    <option value="Поддержка">Техническая поддержка</option>
-                </select>
-            </div>
-        </div>
-        <p class="help" id="subjectHelp">Выберите тему сообщения</p>  <!-- ДОБАВЛЕНО -->
-    </div>
-    
-    <!-- Поле Сообщение -->
-    <div class="field">
-        <label class="label">Сообщение <span class="has-text-danger">*</span></label>
-        <div class="control">
-            <textarea class="textarea" 
-                      id="message"           <!-- ДОБАВЛЕНО -->
-                      placeholder="Ваше сообщение..." 
-                      rows="5" 
-                      required></textarea>
-        </div>
-        <p class="help" id="messageHelp">Напишите ваш отзыв или вопрос</p>  <!-- ДОБАВЛЕНО -->
-    </div>
-    
-    <!-- Согласие -->
-    <div class="field">
-        <div class="control">
-            <label class="checkbox">
-                <input type="checkbox" 
-                       id="agreement"        <!-- ДОБАВЛЕНО -->
-                       required>
-                Соглашаюсь на обработку персональных данных
-            </label>
-        </div>
-    </div>
-    
-    <!-- Кнопка -->
-    <div class="field">
-        <div class="control">
-            <button class="button is-primary is-fullwidth" type="submit">
-                Отправить отзыв
-            </button>
-        </div>
-    </div>
-</form>
         });
     </script>
     <script src="scripts/validation.js"></script>
